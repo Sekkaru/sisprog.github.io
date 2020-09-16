@@ -4,19 +4,29 @@
 #include <sys/types.h>
 #include <sys/wait.h>
  
-int main(void) {
-    switch(fork()) {
+int main(int argc, char* argv[]) 
+{
+    int status;
+    switch(fork()) 
+    {
         case -1:
             perror("fork");
             return 1;
         case 0:
-            if ( execl("/usr/bin/man", "man", "execl", NULL) == -1 ) {
+            if ( execvp(argv[1], &argv[1]) == -1 ) 
+            {
                 perror("execl");
                 return 1;
             }
             break;
         default:
-            wait(NULL);
+            if (wait(&status) >= 0)
+            {
+                if (WIFEXITED(status))
+                {
+                    printf("%d \n", WEXITSTATUS(status));
+                }
+            }
             printf("That's all!\n");
             break;
     }
