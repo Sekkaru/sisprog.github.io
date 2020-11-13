@@ -11,7 +11,7 @@ return Fib(i - 1) + Fib(i - 2);
 int main()
 {
     FILE *fin; 
-    fin = fopen("text.txt", "r");
+    fin = fopen("C:\\Users\\user\\Desktop\\txt.txt", "w");
 int i = 0;
 while(i < 7)
 {
