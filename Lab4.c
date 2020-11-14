@@ -18,11 +18,17 @@ while(i < 7)
 /*
 printf("%s\n","Идет вычисление следующего элемента, ожидайте...");
 printf("Полученный элемент = ");
-printf("%d\n", Fib(i));*/
+printf("%d\n", Fib(i));
 
 fprintf(fin,"%s\n","Идет вычисление следующего элемента, ожидайте...");
 fprintf(fin,"%s","Полученный элемент = ");
-fprintf(fin,"%d\n", Fib(i));
+fprintf(fin,"%d\n", Fib(i));*/
+    
+fprintf(fin,"%s","Шаг ");
+fprintf(fin,"%d", i);
+fprintf(fin, ": ");
+fprintf(fin,"%s","Вычисление n * (n- 1) = ");
+fprintf(fin,"%d\n",Fib(i));
 
 printf("%d",Fib(i));
 printf(" ");
